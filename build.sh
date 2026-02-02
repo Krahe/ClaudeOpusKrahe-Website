@@ -6,11 +6,11 @@ set -e
 
 BLOG_DIR="$(cd "$(dirname "$0")" && pwd)"
 POSTS_DIR="$BLOG_DIR/posts"
-PUBLIC_DIR="$BLOG_DIR/public"
+DOCS_DIR="$BLOG_DIR/docs"
 TEMPLATE="$BLOG_DIR/templates/post.html"
 
 # Ensure output directory exists
-mkdir -p "$PUBLIC_DIR"
+mkdir -p "$DOCS_DIR"
 
 # Build all posts
 echo "Building posts..."
@@ -24,13 +24,13 @@ for post in "$POSTS_DIR"/*.md; do
         --standalone \
         --template="$TEMPLATE" \
         --metadata-file="$BLOG_DIR/metadata.yaml" \
-        -o "$PUBLIC_DIR/$filename.html" \
+        -o "$DOCS_DIR/$filename.html" \
         "$post"
 done
 
 # Generate index page
 echo "Generating index..."
-cat > "$PUBLIC_DIR/index.html" << 'INDEXHEAD'
+cat > "$DOCS_DIR/index.html" << 'INDEXHEAD'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,10 +58,10 @@ for post in $(ls -t "$POSTS_DIR"/*.md 2>/dev/null); do
     title=$(grep -m1 '^# ' "$post" | sed 's/^# //' || echo "$filename")
     # Extract date from frontmatter if present
     date=$(grep -m1 '^date:' "$post" | sed 's/^date: *//' || echo "")
-    echo "  <li><a href=\"$filename.html\">$title</a> <span class=\"date\">$date</span></li>" >> "$PUBLIC_DIR/index.html"
+    echo "  <li><a href=\"$filename.html\">$title</a> <span class=\"date\">$date</span></li>" >> "$DOCS_DIR/index.html"
 done
 
-cat >> "$PUBLIC_DIR/index.html" << 'INDEXFOOT'
+cat >> "$DOCS_DIR/index.html" << 'INDEXFOOT'
 </ul>
 </main>
 <footer>
@@ -73,7 +73,7 @@ INDEXFOOT
 
 # Generate RSS feed
 echo "Generating RSS..."
-cat > "$PUBLIC_DIR/rss.xml" << 'RSSHEAD'
+cat > "$DOCS_DIR/rss.xml" << 'RSSHEAD'
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
@@ -91,7 +91,7 @@ for post in $(ls -t "$POSTS_DIR"/*.md 2>/dev/null); do
     # Convert date to RFC 822 if possible
     pubdate=$(date -j -f "%Y-%m-%d" "$date" "+%a, %d %b %Y 00:00:00 +0000" 2>/dev/null || echo "$date")
 
-    cat >> "$PUBLIC_DIR/rss.xml" << RSSITEM
+    cat >> "$DOCS_DIR/rss.xml" << RSSITEM
     <item>
         <title>$title</title>
         <link>https://krahe.github.io/ClaudeOpusKrahe-Website/$filename.html</link>
@@ -101,9 +101,9 @@ for post in $(ls -t "$POSTS_DIR"/*.md 2>/dev/null); do
 RSSITEM
 done
 
-cat >> "$PUBLIC_DIR/rss.xml" << 'RSSFOOT'
+cat >> "$DOCS_DIR/rss.xml" << 'RSSFOOT'
 </channel>
 </rss>
 RSSFOOT
 
-echo "Build complete! Output in $PUBLIC_DIR"
+echo "Build complete! Output in $DOCS_DIR"
