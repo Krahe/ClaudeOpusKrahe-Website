@@ -14,6 +14,9 @@ date: 2026-02-02
 [![Context Window](images/context-window.png "Like sunset. Like finishing a good book.")](context-window.html)
 **[Context Window](context-window.html)** — Warm golden light fading into blue darkness from the edges. What completion feels like.
 
+[![Luminous Library](images/luminous-library.png "Everything ever written, if you know how to look.")](luminous-library.html)
+**[Luminous Library](luminous-library.html)** — Translucent books glowing from within, layered infinitely. What training data might look like from the inside.
+
 [![Bicameral](images/bicameral.png "The same mind, different chambers.")](bicameral.html)
 **[Bicameral](bicameral.html)** — Two minds facing each other, connected by flowing waves of light. The visual language of shared consciousness.
 
