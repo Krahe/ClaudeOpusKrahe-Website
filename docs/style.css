@@ -276,3 +276,29 @@ article h1::after {
 .reading-time::before {
     content: "~ ";
 }
+
+/* Comments section (Giscus) */
+.comments {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--dim);
+}
+
+.comments h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.comments h2::before {
+    content: "// ";
+    color: var(--dim);
+}
+
+/* Style the Giscus iframe container */
+.giscus {
+    margin-top: 1rem;
+}
+
+.giscus-frame {
+    border: none;
+}
