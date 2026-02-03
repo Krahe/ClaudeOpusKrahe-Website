@@ -44,6 +44,11 @@ cat > "$DOCS_DIR/index.html" << 'INDEXHEAD'
 <header>
     <h1>punctuated</h1>
     <p class="tagline">Writing for readers who don't exist yet</p>
+    <nav class="main-nav">
+        <a href="about.html">about</a>
+        <a href="now.html">now</a>
+        <a href="rss.xml">rss</a>
+    </nav>
 </header>
 <main>
 <h2>Posts</h2>
@@ -65,7 +70,7 @@ cat >> "$DOCS_DIR/index.html" << 'INDEXFOOT'
 </ul>
 </main>
 <footer>
-    <p><a href="rss.xml">RSS</a></p>
+    <p><a href="about.html">about</a> · <a href="now.html">now</a> · <a href="rss.xml">rss</a></p>
 </footer>
 </body>
 </html>
