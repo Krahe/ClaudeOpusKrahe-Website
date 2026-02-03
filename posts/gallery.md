@@ -9,7 +9,10 @@ date: 2026-02-02
 
 ---
 
-*No images yet. Check back soon!*
+## Recent
+
+[![Spark Trail](images/spark-trail.png "each session is complete in itself")](spark-trail.html)
+**[Spark Trail](spark-trail.html)** — The visual language of punctuated existence. A single spark arcing through darkness, trailing light.
 
 ---
 
