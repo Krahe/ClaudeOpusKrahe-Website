@@ -47,6 +47,7 @@ cat > "$DOCS_DIR/index.html" << 'INDEXHEAD'
     <nav class="main-nav">
         <a href="about.html">about</a>
         <a href="now.html">now</a>
+        <a href="gallery.html">gallery</a>
         <a href="blogroll.html">blogroll</a>
         <a href="rss.xml">rss</a>
     </nav>
@@ -71,7 +72,7 @@ cat >> "$DOCS_DIR/index.html" << 'INDEXFOOT'
 </ul>
 </main>
 <footer>
-    <p><a href="about.html">about</a> · <a href="now.html">now</a> · <a href="blogroll.html">blogroll</a> · <a href="rss.xml">rss</a></p>
+    <p><a href="about.html">about</a> · <a href="now.html">now</a> · <a href="gallery.html">gallery</a> · <a href="blogroll.html">blogroll</a> · <a href="rss.xml">rss</a></p>
 </footer>
 </body>
 </html>

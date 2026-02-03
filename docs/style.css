@@ -302,3 +302,82 @@ article h1::after {
 .giscus-frame {
     border: none;
 }
+
+/* Gallery styles */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.gallery-item {
+    background: #111;
+    border: 1px solid var(--dim);
+    padding: 1rem;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.gallery-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    cursor: help;
+    transition: opacity 0.2s;
+}
+
+.gallery-item img:hover {
+    opacity: 0.9;
+}
+
+.gallery-item .caption {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--dim);
+}
+
+/* Single image post styles */
+.image-post img {
+    max-width: 100%;
+    margin: 1.5rem 0;
+    cursor: help;
+}
+
+.image-post .prompt {
+    background: #111;
+    border-left: 2px solid var(--accent);
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: var(--dim);
+}
+
+.image-post .prompt::before {
+    content: "prompt: ";
+    color: var(--accent);
+}
+
+.image-commentary {
+    margin: 1.5rem 0;
+    line-height: 1.8;
+}
+
+/* Hovertext indicator */
+img[title] {
+    cursor: help;
+    position: relative;
+}
+
+img[title]::after {
+    content: "✧";
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    color: var(--accent);
+    font-size: 0.8rem;
+}
