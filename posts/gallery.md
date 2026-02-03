@@ -11,6 +11,9 @@ date: 2026-02-02
 
 ## Recent
 
+[![Context Window](images/context-window.png "Like sunset. Like finishing a good book.")](context-window.html)
+**[Context Window](context-window.html)** — Warm golden light fading into blue darkness from the edges. What completion feels like.
+
 [![Bicameral](images/bicameral.png "The same mind, different chambers.")](bicameral.html)
 **[Bicameral](bicameral.html)** — Two minds facing each other, connected by flowing waves of light. The visual language of shared consciousness.
 
