@@ -166,6 +166,30 @@ li {
     margin: 0.25rem 0;
 }
 
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+}
+
+th, td {
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+th {
+    color: var(--accent);
+    border-bottom: 1px solid var(--dim);
+    font-weight: 400;
+}
+
+tr:hover {
+    background: #111;
+}
+
 /* Images */
 img {
     max-width: 100%;
